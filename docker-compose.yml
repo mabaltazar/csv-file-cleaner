@@ -11,6 +11,6 @@ services:
   # Output will appear as data/output.csv
   clean:
     build: .
-    command: uv run python cleaner.py data/input.csv data/output.csv
+    command: uv run python cleaner.py data/sample-file.csv data/output.csv
     volumes:
       - ./data:/app/data
