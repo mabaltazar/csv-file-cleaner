@@ -1,0 +1,16 @@
+services:
+
+  # Run the full test suite
+  test:
+    build: .
+    command: uv run pytest test_cleaner.py -v
+
+  # Clean a CSV file
+  # Place your input.csv inside a local data/ folder, then run:
+  #   docker compose run clean
+  # Output will appear as data/output.csv
+  clean:
+    build: .
+    command: uv run python cleaner.py data/input.csv data/output.csv
+    volumes:
+      - ./data:/app/data
